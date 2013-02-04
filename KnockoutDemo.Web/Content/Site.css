@@ -1,0 +1,149 @@
+﻿
+.main-content
+{
+    width: 500px;
+    padding: 5px;
+    border:none 1px #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 1px 2px 2px #000000;
+    -webkit-box-shadow: 1px 2px 2px #000000;
+    box-shadow: 1px 2px 2px #000000;
+}
+
+.liveComments-contentContainer
+{
+}
+
+.liveComments-titleContainer
+{    
+    padding:5px;
+    background: #ccd1f5;
+    border: none 5px #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.liveComments-InsertComments
+{
+    padding: 5px;
+    background: #eef9f9;
+    border: none 5px #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.liveComments-teams
+{
+    float:left;
+}
+
+.liveComments-status
+{
+    font-size: 1em;
+    font-weight: bold;
+    float: right;
+    padding: 0 2px 0 2px;
+    background: #880000;
+    color: #ffffff;
+    border: none 3px #000000;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.liveComments-date
+{
+    clear:both;
+    font-size: smaller;
+}
+
+.commentEntry-label
+{
+    font-weight: bold;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+body
+{
+    font-size: .85em;
+    font-family: "Segoe UI" , Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section
+{
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea
+{
+    min-height: 75px;
+}
+
+.editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field
+{
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #f00;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

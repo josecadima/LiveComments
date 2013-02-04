@@ -1,0 +1,57 @@
+﻿<h3>Live Comments</h3>
+
+<div class="main-content">
+    <div id="GameScoreView" class="liveComments-titleContainer">
+        <div class="liveComments-teams">
+            <strong data-bind="text: TeamName1"></strong>
+            <strong data-bind="text: TeamScore1"></strong>
+            -
+            <strong data-bind="text: TeamScore2"></strong>
+            <strong data-bind="text: TeamName2"></strong>
+        </div>
+        <div class="liveComments-status" data-bind="text: Status"></div>
+        <div class="liveComments-date">31/01/2013</div>
+    </div>
+
+    <div id="liveCommentsContentView">
+        <table class="liveComments-contentContainer">
+            <tbody data-bind="foreach: Comments">
+                <tr>
+                    <td data-bind="text: Minute"></td>
+                    <td><img data-bind="attr: {src: CommentType().Icon}" /></td>
+                    <td data-bind="text: Comment"></td>
+
+                    <td data-bind="visible: $root.IsEditable"> <a href="#" data-bind="click: $root.EditComment"> Edit </a> </td>
+                    <td data-bind="visible: $root.IsEditable"> <a href="#" data-bind="click: $root.RemoveComment"> Remove </a> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="liveComments-InsertComments" data-bind="visible: IsEditable">
+            <form data-bind="submit: AddComment">
+                <div data-bind="with: Current">
+                    <span class="commentEntry-label">Minute:</span> 
+                    <input data-bind="value: Minute" size="3" />
+                    <span class="commentEntry-label">Type of Comment:</span> 
+                    <select data-bind="options: $root.CommentTypes, optionsText: 'Type', optionsCaption: 'Choose...', value: $root.SelectedCommentType"></select>
+                    <div class="commentEntry-label">Comment:</div>
+                    <textarea data-bind="value: Comment" cols="50" rows="4"></textarea>                
+                </div>
+                <button type="submit">Comment</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/ViewModels/GameScoreViewModel.js"></script>
+    <script src="~/ViewModels/LiveCommentsViewModel.js"></script>
+
+    <script>
+        var webapiUrl = '@System.Configuration.ConfigurationManager.AppSettings["webapiUrl"]';
+
+        ko.applyBindings(new GameScoreViewModel(webapiUrl), document.getElementById("GameScoreView"));
+        ko.applyBindings(new LiveCommentsViewModel(webapiUrl), document.getElementById("liveCommentsContentView"));
+    </script>
+}
